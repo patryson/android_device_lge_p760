@@ -2,11 +2,9 @@
 <resources>
     <string name="app_name">Настройки LGE L9</string>
 
-    <string name="general_title">ОБЩИЕ</string>
     <string name="audio_title">ЗВУК</string>
     <string name="performance_title">ПРОИЗВОДИТЕЛЬНОСТЬ</string>
 
-    <string name="category_general_title">Общие</string>
     <string name="category_performance_title">Производительность</string>
     <string name="category_audio_title">Звук</string>
 
@@ -27,8 +25,5 @@
     <string name="audio_mic_main_preamp_gain_title">Усиление основного микрофона</string>
     <string name="audio_mic_sub_preamp_gain_title">Усиление второго микрофона</string>
     <string name="audio_mic_preamp_noboot_toast">Усиления -24 дБ и ниже не будут восстановлены после перезагрузки.</string>
-
-    <string name="category_sensors_title">Датчики и вибро</string>
-    <string name="vibrator_intensity_title">Интенсивность вибратора</string>
     
 </resources>
