@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Zaawansowane</string>
+    <string name="app_name">Optimus&#xA0;L9 Ustawienia</string>
 
+    <string name="general_title">OGÓLNE</string>
+    <string name="audio_title">AUDIO</string>
+    <string name="performance_title">WYDAJNOŚĆ</string>
+
+    <string name="category_general_title">Ogólne</string>
     <string name="category_performance_title">Wydajność</string>
+    <string name="category_audio_title">Audio</string>
+
+    <string name="button_default">Domyślne</string>
+    <string name="button_reset">Reset</string>
 
     <string name="gpu_overclock_title">Maksymalna częstotliwość GPU</string>
     <string name="iva_overclock_title">Maksymalna częstotliwość IVA</string>
     <string name="max_sleep_frequency_title">Maks. częst. CPU przy wył. ekranie</string>
+    
+    <string name="audio_output_title">Wyjście</string>
+    <string name="audio_hpvol_title">Wzmaczniacz słuchawkowy</string>
+    <string name="audio_hpvol_gain_title">Wzmocnienie</string>
+    <string name="audio_hpvol_summary">Poziom wzm.: %d dB</string>
+    <string name="audio_hpvol_restoreonboot">Przywróć przy włączeniu telefonu</string>
+
+    <string name="audio_input_title">Wejście</string>
+    <string name="audio_mic_main_preamp_gain_title">Poziom głównego p.wzm. mikrofonu</string>
+    <string name="audio_mic_sub_preamp_gain_title">Poziom dodat. p.wzm. mikrofonu</string>
+    <string name="audio_mic_preamp_noboot_toast">Poziom wzm. -24dB i poniżej nie będzie przywrócony po restarcie tel.!</string>
+    <string name="category_sensors_title">Sensory &amp; czujniki</string>
+    <string name="vibrator_intensity_title">Intensywnoć wibracji</string>
 
 </resources>
