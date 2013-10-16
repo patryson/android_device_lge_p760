@@ -38,5 +38,25 @@
         <item>800000</item>
         <item>1008000</item>
     </string-array>
+    
+    <string-array name="audio_mic_preamp_gain_entries">
+        <item>-30 dB (Głośny Rock Koncert)</item>
+        <item>-24 dB (Rock Koncert)</item>
+        <item>-18 dB (Cichy Koncert)</item>
+        <item>-12 dB (Głośny)</item>
+        <item>-6 dB (Normalny)</item>
+        <item>0 dB (Cichy)</item>
+        <item>Domyślny</item>
+    </string-array>
 
+    <string-array name="audio_mic_preamp_gain_values" translatable="false">
+        <item>0</item>
+        <item>6</item>
+        <item>12</item>
+        <item>18</item>
+        <item>24</item>
+        <item>30</item>
+        <item>-1</item>
+    </string-array>
+    
 </resources>
