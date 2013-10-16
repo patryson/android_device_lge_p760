@@ -2,11 +2,9 @@
 <resources>
    <string name="app_name">Optimus&#xA0;L9 Settings</string>
 
-    <string name="general_title">GENERAL</string>
     <string name="audio_title">AUDIO</string>
     <string name="performance_title">PERFORMANCE</string>
 
-    <string name="category_general_title">General</string>
     <string name="category_performance_title">Performance</string>
     <string name="category_audio_title">Audio</string>
 
@@ -27,8 +25,5 @@
     <string name="audio_mic_main_preamp_gain_title">Main Microphone Preamplifier Gain</string>
     <string name="audio_mic_sub_preamp_gain_title">Sub Microphone Preamplifier Gain</string>
     <string name="audio_mic_preamp_noboot_toast">Note: Gains -24 dB and below will not be restored after reboot.</string>
-
-    <string name="category_sensors_title">Sensors &amp; motors</string>
-    <string name="vibrator_intensity_title">Vibrator Intensity</string>
 
 </resources>
