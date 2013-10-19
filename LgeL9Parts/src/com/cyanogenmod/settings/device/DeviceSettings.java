@@ -15,7 +15,7 @@ public class DeviceSettings extends Activity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         getFragmentManager().beginTransaction().replace(android.R.id.content,
-                    new DevicePreferenceActivity()).commit();
+                    new DeviceSettings()).commit();
      }
 
     @Override
