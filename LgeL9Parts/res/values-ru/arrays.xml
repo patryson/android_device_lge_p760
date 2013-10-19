@@ -5,20 +5,9 @@
         <item>384.0 МГц (завышено)</item>
     </string-array>
 
-    <string-array name="gpu_overclock_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <string-array name="iva_overclock_entries">
         <item>332 МГц (по умолчанию)</item>
         <item>430 МГц (завышено)</item>
-    </string-array>
-
-    <string-array name="iva_overclock_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
     </string-array>
 
     <string-array name="max_sleep_frequency_entries">
@@ -30,15 +19,6 @@
         <item>1008 МГц</item>
     </string-array>
 
-    <string-array name="max_sleep_frequency_values" translatable="false">
-        <item>0</item>
-        <item>200000</item>
-        <item>300000</item>
-        <item>600000</item>
-        <item>800000</item>
-        <item>1008000</item>
-    </string-array>
-    
     <string-array name="audio_mic_preamp_gain_entries">
         <item>-30 дБ (Громкий Рок Концерт)</item>
         <item>-24 дБ (Рок Концерт)</item>
@@ -47,16 +27,6 @@
         <item>-6 дБ (Обычно)</item>
         <item>0 дБ (Чуствительно)</item>
         <item>По Умолчанию</item>
-    </string-array>
-    
-    <string-array name="audio_mic_preamp_gain_values" translatable="false">
-        <item>0</item>
-        <item>6</item>
-        <item>12</item>
-        <item>18</item>
-        <item>24</item>
-        <item>30</item>
-        <item>-1</item>
     </string-array>
 
 </resources>
