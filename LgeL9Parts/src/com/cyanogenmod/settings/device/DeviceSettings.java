@@ -49,8 +49,8 @@ public class DeviceSettings extends FragmentActivity {
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
 
-        mTabsAdapter.addTab(actionBar.newTab().setText(R.string.general_title),
-                GeneralFragment.class, null);
+       // mTabsAdapter.addTab(actionBar.newTab().setText(R.string.general_title),
+          //      GeneralFragment.class, null);
 
         if ( AudioFragment.isSupported())
             mTabsAdapter.addTab(actionBar.newTab().setText(R.string.audio_title),
