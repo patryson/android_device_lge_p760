@@ -79,7 +79,7 @@ public class U2RIL extends RIL implements CommandsInterface {
 
     protected int mCallState = TelephonyManager.CALL_STATE_IDLE;
 
-    private int RIL_REQUEST_HANG_UP_CALL = 0xb7;
+    private int RIL_REQUEST_HANG_UP_CALL = 0xce;
     private int RIL_REQUEST_LGE_CPATH = 0xfd;
 
     /* We're not actually changing REQUEST_GET_IMEI, but it's one
@@ -271,7 +271,7 @@ public class U2RIL extends RIL implements CommandsInterface {
                 break;
             case 1080: // RIL_UNSOL_LGE_FACTORY_READY (NG)
                 /* Adjust request IDs */
-                RIL_REQUEST_HANG_UP_CALL = 0xb7;
+                RIL_REQUEST_HANG_UP_CALL = 0xce;
                 break;
             case RIL_UNSOL_LGE_SIM_STATE_CHANGED:
             case RIL_UNSOL_LGE_SIM_STATE_CHANGED_NEW:
