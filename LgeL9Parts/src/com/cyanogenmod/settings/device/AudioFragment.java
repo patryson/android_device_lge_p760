@@ -49,22 +49,22 @@ public class AudioFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (!AudioOutputGain.isSupported())
-            return;
+      //  if (!AudioOutputGain.isSupported())
+        //    return;
 
         addPreferencesFromResource(R.xml.audio);
 
         mAudioOutputGain = (AudioOutputGain) findPreference(AudioFragment.KEY_AUDIO_HPVOL);
-        //mAudioOutputGain.setEnabled(AudioOutputGain.isSupported());
+        mAudioOutputGain.setEnabled(AudioOutputGain.isSupported());
         mAudioOutputGain.updateSummary();
                                           
         mAudioInputGain = (ListPreference) findPreference(KEY_AUDIO_PREAMP_GAIN + "_" + MIC_MAIN_SUFFIX);
-        //mAudioInputGain.setEnabled(mAudioInputGain.isSupported());
+        mAudioInputGain.setEnabled(mAudioInputGain.isSupported());
         mAudioInputGain.setOnPreferenceChangeListener(new AudioPreampGain(getActivity(), MIC_MAIN_SUFFIX));
         AudioPreampGain.updateSummary(mAudioInputGain, Integer.parseInt(mAudioInputGain.getValue()));
 
         mAudioInputGain = (ListPreference) findPreference(KEY_AUDIO_PREAMP_GAIN + "_" + MIC_SUB_SUFFIX);
-        //mAudioInputGain.setEnabled(mAudioInputGain.isSupported());
+        mAudioInputGain.setEnabled(mAudioInputGain.isSupported());
         mAudioInputGain.setOnPreferenceChangeListener(new AudioPreampGain(getActivity(), MIC_SUB_SUFFIX));
         AudioPreampGain.updateSummary(mAudioInputGain, Integer.parseInt(mAudioInputGain.getValue()));
 
