@@ -79,7 +79,7 @@ public class U2RIL extends RIL implements CommandsInterface {
 
     protected int mCallState = TelephonyManager.CALL_STATE_IDLE;
 
-    private int RIL_REQUEST_HANG_UP_CALL = 0xce;
+    private int RIL_REQUEST_HANG_UP_CALL = 0xb7;
     private int RIL_REQUEST_LGE_CPATH = 0xfd;
 
     /* We're not actually changing REQUEST_GET_IMEI, but it's one
@@ -94,8 +94,8 @@ public class U2RIL extends RIL implements CommandsInterface {
         // Use this to bootstrap a bunch of internal variables
         RILRequest rrLSC = RILRequest.obtain(
                 0x113, null);
-        rrLSC.mp.writeInt(1);
-        rrLSC.mp.writeInt(0);
+        rrLSC.mParcel.writeInt(1);
+        rrLSC.mParcel.writeInt(0)
         send(rrLSC);
 
 
@@ -127,13 +127,13 @@ public class U2RIL extends RIL implements CommandsInterface {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_CALL_FORWARD, response);
 
-        rr.mp.writeInt(action);
-        rr.mp.writeInt(cfReason);
+        rr.mParcel.writeInt(action);
+        rr.mParcel.writeInt(cfReason);
         if (serviceClass == 0) serviceClass = 255;
-        rr.mp.writeInt(serviceClass);
-        rr.mp.writeInt(PhoneNumberUtils.toaFromString(number));
-        rr.mp.writeString(number);
-        rr.mp.writeInt (timeSeconds);
+        rr.mParcel.writeInt(serviceClass);
+        rr.mParcel.writeInt(PhoneNumberUtils.toaFromString(number));
+        rr.mParcel.writeString(number);
+        rr.mParcel.writeInt (timeSeconds);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                     + " " + action + " " + cfReason + " " + serviceClass
@@ -149,13 +149,13 @@ public class U2RIL extends RIL implements CommandsInterface {
         RILRequest rr
             = RILRequest.obtain(RIL_REQUEST_QUERY_CALL_FORWARD_STATUS, response);
 
-        rr.mp.writeInt(2); // 2 is for query action, not in use anyway
-        rr.mp.writeInt(cfReason);
+        rr.mParcel.writeInt(2); // 2 is for query action, not in use anyway
+        rr.mParcel.writeInt(cfReason);
         if (serviceClass == 0) serviceClass = 255;
-        rr.mp.writeInt(serviceClass);
-        rr.mp.writeInt(PhoneNumberUtils.toaFromString(number));
-        rr.mp.writeString(number);
-        rr.mp.writeInt (0);
+        rr.mParcel.writeInt(serviceClass);
+        rr.mParcel.writeInt(PhoneNumberUtils.toaFromString(number));
+        rr.mParcel.writeString(number);
+        rr.mParcel.writeInt (0);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " " + cfReason + " " + serviceClass);
@@ -231,8 +231,8 @@ public class U2RIL extends RIL implements CommandsInterface {
                 if (mCallPath >= 0) {
                     RILRequest rrLSL = RILRequest.obtain(
                             RIL_REQUEST_LGE_CPATH, null);
-                    rrLSL.mp.writeInt(1);
-                    rrLSL.mp.writeInt(mCallPath);
+                    rrLSL.mParcel.writeInt(1);
+                    rrLSL.mParcel.writeInt(callPath);
                     send(rrLSL);
                 }
 
@@ -271,7 +271,7 @@ public class U2RIL extends RIL implements CommandsInterface {
                 break;
             case 1080: // RIL_UNSOL_LGE_FACTORY_READY (NG)
                 /* Adjust request IDs */
-                RIL_REQUEST_HANG_UP_CALL = 0xce;
+                RIL_REQUEST_HANG_UP_CALL = 0xb7;
                 break;
             case RIL_UNSOL_LGE_SIM_STATE_CHANGED:
             case RIL_UNSOL_LGE_SIM_STATE_CHANGED_NEW:
@@ -307,8 +307,8 @@ public class U2RIL extends RIL implements CommandsInterface {
                     mCallPath = callPath;
                     RILRequest rrLSL = RILRequest.obtain(
                             RIL_REQUEST_LGE_CPATH, null);
-                    rrLSL.mp.writeInt(1);
-                    rrLSL.mp.writeInt(callPath);
+                    rrLSL.mParcel.writeInt(1);
+                    rrLSL.mParcel.writeInt(callPath);
                     send(rrLSL);
                 }
 
