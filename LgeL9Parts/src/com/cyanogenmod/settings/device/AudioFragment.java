@@ -49,13 +49,13 @@ public class AudioFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-      //  if (!AudioOutputGain.isSupported())
-        //    return;
+        if (!AudioOutputGain.isSupported())
+            return;
 
         addPreferencesFromResource(R.xml.audio);
 
         mAudioOutputGain = (AudioOutputGain) findPreference(AudioFragment.KEY_AUDIO_HPVOL);
-        //mAudioOutputGain.setEnabled(AudioOutputGain.isSupported());
+        mAudioOutputGain.setEnabled(AudioOutputGain.isSupported());
         mAudioOutputGain.updateSummary();
                                           
         mAudioInputGain = (ListPreference) findPreference(KEY_AUDIO_PREAMP_GAIN + "_" + MIC_MAIN_SUFFIX);
