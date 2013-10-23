@@ -95,7 +95,7 @@ public class U2RIL extends RIL implements CommandsInterface {
         RILRequest rrLSC = RILRequest.obtain(
                 0x113, null);
         rrLSC.mParcel.writeInt(1);
-        rrLSC.mParcel.writeInt(0)
+        rrLSC.mParcel.writeInt(0);
         send(rrLSC);
 
 
