@@ -232,7 +232,7 @@ public class U2RIL extends RIL implements CommandsInterface {
                     RILRequest rrLSL = RILRequest.obtain(
                             RIL_REQUEST_LGE_CPATH, null);
                     rrLSL.mp.writeInt(1);
-                    rrLSL.mp.writeInt(callPath);
+                    rrLSL.mp.writeInt(mcallPath);
                     send(rrLSL);
                 }
 
