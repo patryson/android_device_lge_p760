@@ -39,6 +39,7 @@ public class AudioFragment extends PreferenceFragment {
 
     private AudioOutputGain mAudioOutputGain;
     private ListPreference mAudioInputGain;
+    private ListPreference mAudioInputGainSub;
     
 
     public static boolean isSupported() {
@@ -63,10 +64,10 @@ public class AudioFragment extends PreferenceFragment {
         mAudioInputGain.setOnPreferenceChangeListener(new AudioPreampGain(getActivity(), MIC_MAIN_SUFFIX));
         AudioPreampGain.updateSummary(mAudioInputGain, Integer.parseInt(mAudioInputGain.getValue()));
 
-        mAudioInputGain = (ListPreference) findPreference(KEY_AUDIO_PREAMP_GAIN + "_" + MIC_SUB_SUFFIX);
+        mAudioInputGainSub = (ListPreference) findPreference(KEY_AUDIO_PREAMP_GAIN + "_" + MIC_SUB_SUFFIX);
         //mAudioInputGain.setEnabled(mAudioInputGain.isSupported());
-        mAudioInputGain.setOnPreferenceChangeListener(new AudioPreampGain(getActivity(), MIC_SUB_SUFFIX));
-        AudioPreampGain.updateSummary(mAudioInputGain, Integer.parseInt(mAudioInputGain.getValue()));
+        mAudioInputGainSub.setOnPreferenceChangeListener(new AudioPreampGain(getActivity(), MIC_SUB_SUFFIX));
+        AudioPreampGain.updateSummary(mAudioInputGainSub, Integer.parseInt(mAudioInputGainSub.getValue()));
 
     }
 
