@@ -94,8 +94,8 @@ public class U2RIL extends RIL implements CommandsInterface {
         // Use this to bootstrap a bunch of internal variables
         RILRequest rrLSC = RILRequest.obtain(
                 0x113, null);
-        rrLSC.mParcel.writeInt(1);
-        rrLSC.mParcel.writeInt(0);
+        rrLSC.mp.writeInt(1);
+        rrLSC.mp.writeInt(0);
         send(rrLSC);
 
 
@@ -127,13 +127,13 @@ public class U2RIL extends RIL implements CommandsInterface {
         RILRequest rr
                 = RILRequest.obtain(RIL_REQUEST_SET_CALL_FORWARD, response);
 
-        rr.mParcel.writeInt(action);
-        rr.mParcel.writeInt(cfReason);
+        rr.mp.writeInt(action);
+        rr.mp.writeInt(cfReason);
         if (serviceClass == 0) serviceClass = 255;
-        rr.mParcel.writeInt(serviceClass);
-        rr.mParcel.writeInt(PhoneNumberUtils.toaFromString(number));
-        rr.mParcel.writeString(number);
-        rr.mParcel.writeInt (timeSeconds);
+        rr.mp.writeInt(serviceClass);
+        rr.mp.writeInt(PhoneNumberUtils.toaFromString(number));
+        rr.mp.writeString(number);
+        rr.mp.writeInt (timeSeconds);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                     + " " + action + " " + cfReason + " " + serviceClass
@@ -149,13 +149,13 @@ public class U2RIL extends RIL implements CommandsInterface {
         RILRequest rr
             = RILRequest.obtain(RIL_REQUEST_QUERY_CALL_FORWARD_STATUS, response);
 
-        rr.mParcel.writeInt(2); // 2 is for query action, not in use anyway
-        rr.mParcel.writeInt(cfReason);
+        rr.mp.writeInt(2); // 2 is for query action, not in use anyway
+        rr.mp.writeInt(cfReason);
         if (serviceClass == 0) serviceClass = 255;
-        rr.mParcel.writeInt(serviceClass);
-        rr.mParcel.writeInt(PhoneNumberUtils.toaFromString(number));
-        rr.mParcel.writeString(number);
-        rr.mParcel.writeInt (0);
+        rr.mp.writeInt(serviceClass);
+        rr.mp.writeInt(PhoneNumberUtils.toaFromString(number));
+        rr.mp.writeString(number);
+        rr.mp.writeInt (0);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " " + cfReason + " " + serviceClass);
@@ -231,8 +231,8 @@ public class U2RIL extends RIL implements CommandsInterface {
                 if (mCallPath >= 0) {
                     RILRequest rrLSL = RILRequest.obtain(
                             RIL_REQUEST_LGE_CPATH, null);
-                    rrLSL.mParcel.writeInt(1);
-                    rrLSL.mParcel.writeInt(callPath);
+                    rrLSL.mp.writeInt(1);
+                    rrLSL.mp.writeInt(callPath);
                     send(rrLSL);
                 }
 
@@ -307,8 +307,8 @@ public class U2RIL extends RIL implements CommandsInterface {
                     mCallPath = callPath;
                     RILRequest rrLSL = RILRequest.obtain(
                             RIL_REQUEST_LGE_CPATH, null);
-                    rrLSL.mParcel.writeInt(1);
-                    rrLSL.mParcel.writeInt(callPath);
+                    rrLSL.mp.writeInt(1);
+                    rrLSL.mp.writeInt(callPath);
                     send(rrLSL);
                 }
 
